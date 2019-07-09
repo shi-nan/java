@@ -1,0 +1,60 @@
+ 1. 题目要求
+ 设计名为MyPoint的类表示一个平面坐标点--具有x坐标和y坐标的点，该类包括，
+   成员变量：x、y；double型；
+   无参数的构造方法：MyPoint( )，创建坐标点（0，0）；
+   带参数的构造方法:MyPoint(double x,double y)创建一个坐标点(x，y)；
+   成员方法：getX()、getY()，返回坐标点相应的值；
+   成员方法：distance( )，返回MyPoint类型的两个点之间的距离；
+   编写测试程序创建两个点 (0,0) 和 (10，30.5)，并显示它们之间的距离
+ 2. 代码：
+
+package mypoint;
+
+/**
+ *
+ 1. @author shinan
+ */
+public class MyPoint {
+
+    /**
+     * @param args the command line arguments
+     */
+    double x;
+    double y;
+    public double getX(){
+        return x;
+    }
+    public double getY(){
+        return y;
+    }
+    public MyPoint(){
+        x=0;
+        y=0;
+    }
+    public MyPoint(double x,double y){
+        this.x=x;
+        this.y=y;
+    }
+    public double distance(double x,double y){
+        double s;
+		s = Math.sqrt((this.x - x) * (this.x - x)+(this.y - y) * (this.y - y));
+		return s;
+
+    }
+    public double distance(MyPoint mypoint){
+        double s;
+        s = Math.sqrt((this.x - mypoint.getX()) * (this.x - mypoint.getX())+(this.y - mypoint.getY()) * (this.y - mypoint.getY()));
+        return s;
+    }
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        MyPoint point1=new MyPoint(0,0);
+        MyPoint point2=new MyPoint(10,30.5);
+        System.out.println("The distance1 is "+point1.distance(point2));
+     
+    }
+    
+}
+
+

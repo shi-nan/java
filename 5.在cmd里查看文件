@@ -1,0 +1,5 @@
+1.f:
+2.cd 文件保存的路径
+3.javac -encoding UTF-8 helloWorld.java//javac :进行编译
+4.dir可以查看class类//查看所有文件
+5.java helloWorld //输出结果java+类名

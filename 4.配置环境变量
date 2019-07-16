@@ -1,3 +1,6 @@
-1.打开系统设置——————环境变量配置
-2.先创立变量名JAVA_HOME 变量值为jdk所在的路径
-3.编辑变量Path 变量值为（原来的地址）+（；）+（jdk内bin的路径）
+1.安装JDK-1.8
+JDK(Java Development Kit)
+JRE(Java Runtime Environment)
+2.打开系统设置——————环境变量配置
+3.先创立变量名JAVA_HOME 变量值为jdk所在的路径
+4.编辑变量Path 变量值为（原来的地址）+（；）+（jdk内bin的路径）

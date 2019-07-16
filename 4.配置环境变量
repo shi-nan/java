@@ -2,5 +2,14 @@
 JDK(Java Development Kit)
 JRE(Java Runtime Environment)
 2.打开系统设置——————环境变量配置
-3.先创立变量名JAVA_HOME 变量值为jdk所在的路径
-4.编辑变量Path 变量值为（原来的地址）+（；）+（jdk内bin的路径）
+3.先创立变量名JAVA_HOME 变量值为jdk所在的路径----以后有很多Java相关的程序依赖这个环境变量
+4.编辑变量Path 变量值为（原来的地址）+（；）+（jdk内bin的路径）----所有程序都会用到的
+ 绝对路径/相对路径
+ 
+  相对路径：  ...\...\java10班
+  绝对路径：  C:\Program Files\Java\jre1.8.0_211
+  
+ --运行一个程序：
+  给出相对路径
+  给出绝对路径
+  

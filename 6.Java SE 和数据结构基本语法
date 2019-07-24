@@ -286,4 +286,142 @@ F(n):在n数据规模的情况下，基本指令的个数
 优先关注最坏情况 其次看平均情况 最好情况关注比较少
 O（1）最好的算法
 
+顺序表和链表
+线性表
+数据结构
+     初始化       （构造方法）
+     增/删/查/改（普通方法）
+     销毁
+
+线性结构
+    顺序表
+//顺序表的元素类型 int
+public class MyArrayList{
+	//属性是什么
+	private int []array;//代表的是存放数据的数组
+                        //array.length 代表的是数组的容量
+	private int size;	//记录顺序表的已有数据个数
+	//构造方法
+	public MyArrayList(){
+		//1.申请空间
+		array=new int[2];
+		//2.初始化数据个数
+		size=0;
+	}
+
+	//增
+	//尾插
+	public void pushBack(int element){
+		//TODO:先不考虑array 数组放不下的问题
+		array[size++]=element;
+	}//时间复杂度：O（1）
+ 
+	//头插
+	//从后往前移  避免覆盖
+	public void pushFront(int element){
+		for(int i=size;i>=1;i--){
+			array[i]=array[i-1];
+		}//i是空心
+		array[0]=element;
+		size++;
+	}//时间复杂度：O(n)
+	
+	//指定下标位置插数据
+	public void insert(int index,int e,int []array,int size){
+		//for(int i=size;i>index;i--){
+		//	array[i]=array[i-1];//i是空心
+		//}
+		if (index < 0 || index > size) {
+			System.err.println("下标错误");
+			return;
+		}
+		for(int i=size-1;i>=index;i--){
+			array[i+1]=array[i];
+		}//i是实心
+		array[index]=e;
+		size++;
+	}/时间复杂度：O()
+
+  
+	//删
+    //尾删
+	public void popBack(){
+		if(size<=0){
+			System.err.println("顺序表为空");
+			return;
+		}
+		array[--size] = 0;
+	}//时间复杂度：O（1）
+ 
+ //头删
+	public void popFront(){
+	//从前往后移 
+	if(size<=0){
+			System.out.println("顺序表为空");
+			return;
+		}
+    for(int i=0;i<size-1;i++){
+        array[i]=array[i+1];//i是空心
+	}
+	array[--size] = 0;
+	}
+ 
+ //删除下标位置的数
+	public void earse(int index) {
+		if (size <= 0) {
+			System.err.println("顺序表为空");
+			return;
+		}
+		if (index < 0 || index >= size) {
+			System.err.println("下标错误");
+			return;
+		}
+		for(int i=index+1;i<size;i++){
+			array[i-1]=array[i];//i是实心
+		}
+		array[--size] = 0;
+	}
+
+	//查
+	//改
+		
+考虑数组容量（array.length）和已有数据个数（size）的关系
+1.容量是够用的 size<array.length
+2.插入k个数 size+k<=array.length
+3.容量不够用怎么办 
+   int newCapacity =array.length*2;
+   1)int [ ]newArray=new int[newCapacity];
+   2)for(int i=0;i<size;i++){
+       newArray[i]=array[i];
+      }
+  3)this.array=newArray;
+      原来的数组对象变成垃圾 没有引用
+      扩容的空间越小，空间浪费越小
+      扩容的空间越大，需要扩容飞频率越少
+      
+      经验值  大概是1.5倍或2倍
+//保证容量够用，否则进行扩容
+	private void ensureCapacity(){
+		if(size<array.length){
+			return;
+		}
+		 int newCapacity =array.length*2;
+		 int [ ]newArray=new int[newCapacity];
+		 for(int i=0;i<size;i++){
+             newArray[i]=array[i];
+         }
+	     this.array=newArray;
+	}//时间复杂度：最坏：O(n)
+
+
+
+
+IDE (集成开发环境）
+Integration Development Environment
+ 
+Notepad++  编辑器（Text Editor)
+javac           编译器（Compiler)
+java             运行环境（Run time)
+jdb               调试器（D
+
      

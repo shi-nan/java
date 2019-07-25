@@ -1,0 +1,134 @@
+class Node{
+	int val;//int val;	// data | element
+	Node next;	// 后继 如果 next == null 表示是最后一个结点
+
+	Node(int val) {
+		this.val = val;
+		this.next = null;
+	}
+}
+public class MyLinkedList {
+	public static void main(String[] args) {
+		Node head = null;//定义初始化
+		//head的意思是第一个结点		                
+		// 通过第一个结点，就可以找到完整的链表的所有结点
+		// 所以，链表的第一个结点往往代表整个链表
+		// 空的链表，就是一个结点都没有的链表
+		// 也就没有第一个结点
+		// head == null 表示第一个结点不存在
+		// 也就是整个链表为空
+	}
+}
+	//插
+	//头插
+	//head ：原来的第一个结点
+	//val：要插入的值
+	// 返回：新的第一个结点
+	private Node pushFront(int val，Node head){
+		int val=0;
+		//1.结点
+		Node node=new int(val);
+		//2.让原来的head成为node的下一个结点
+		node.next=head;
+		//3.更新第一个结点的引用
+		//head=node;
+		return node;
+	}
+	
+	//尾插
+	private static Node pushBack(Node head,int val){
+		if(head==null){
+			Node node=new int(val);
+			return node;
+		}
+		else{
+			Node last=head;//先从head开始找
+			while(last.next!=null){
+				last=last.next;
+			}
+			last.next=node;
+			
+			return head;
+		}
+	}
+	
+	//删除
+	//头删
+	private Node popFront(Node head){
+		if(head==null){
+			System.err.println("空链表无法删除");
+			return;
+		}
+		return head.next;
+	}
+	
+	//尾删
+	private Node popBack(Node head){
+		if(head==null){
+			System.err.println("空链表无法删除");
+			return;
+		}
+		if(head.next==null){
+			return null;
+		}
+		else {
+			Node lastsecond=head;
+			while(lastsecond.next.next!=null){
+			lastsecond=lastsecond.next;
+			}
+			return head;
+		}
+	}
+	
+//反转链表 不能创造新的结点
+class solution{
+  public ListNode reverseList1(ListNode head){
+	  ListNode result=null;
+	  ListNode cur=head;
+	  
+	  while(cur!=null){
+		  ListNode next=cur.next;
+		  cur.next=result;
+		  result=cur;
+		  
+		  cur=next;
+	  }
+	  return result;
+	}
+  }	
+
+ public ListNode reverseList2(ListNode head){ 
+	if(head==null){
+		return null;
+	}
+    ListNode p1=null;
+	ListNode p2=head;
+	ListNode p3=head.next;
+	 while(p2!=null){
+		 p2.next=p1;
+		 p1=p2;
+		 p2=p3;
+		 if(p3!=null){
+			 p3=p3.next;
+		 }
+	 }
+	 return p1;
+ }
+	
+	
+	public ListNode reverseList3(ListNode head){ 
+    ListNode p1=null;
+	ListNode p2=head;
+	 while(p2!=null){
+		 ListNode p3=p2.next;
+		 
+		 p2.next=p1;
+		 
+		 p1=p2;
+		 p2=p3;
+		 if(p3!=null){
+			 p3=p3.next;
+		 }
+	 }
+	 return p1;
+ }

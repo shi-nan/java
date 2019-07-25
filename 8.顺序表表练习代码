@@ -87,10 +87,78 @@ public class MyArrayList{
 		}
 		array[--size] = 0;
 	} 
+	
+	//删掉某一个元素，如果出现多次，删除第一次出现的位置
+	public void remove(int element){
+		int index=indexOf(element);
+		if(index!=-1){
+			earse(index);
+		}
+	}
+		
+//删掉某一个元素，如果出现多次，全部删除
+	public void removeAll(int element){
+		/* 时间:O(n^2)	时间：O(1)
+		int index;
+		while((index=indexOf(element)){
+			earse(index);
+		}*/
+	/* 时间: O(n)	空间: O(n)
+		int[] newArray = new int[array.length];
+		int j = 0;
+		for (int i = 0; i < size; i++) {
+			if (array[i] != element) {
+				newArray[j++] = array[i];
+			}
+		}
+		array = newArray;
+		size = j;
+		*/
+     // 时间：O(n)	空间：O(1)
+		int j = 0;
+		for (int i = 0; i < size; i++) {
+			if (array[i] != element) {
+				array[j++] = array[i];
+			}
+		}
+		size = j;
+	}
+	
+	public int size(){
+		return size;
+	}
+	
+	public boolean isEmpty(){
+		return size==0;
+	}
 			
 	
 	//查
+	//返回element在顺序表中的下标，如果出现多次，返回第一次出现的下标
+	public int indexOf(int element){
+		for(int i<0;i<size;i++){
+			if(array[i]=element){
+				return i;
+			}
+		}
+		return -1;
+	}
+	
 	//改
+	public int get(int index){
+		if(index<0||index>=size){
+			System.out.println("index error");
+		}
+			return array[index];
+	}
+	
+	public void set(int index,int element){
+		if(index<0||index>=size){
+			System.out.println("index error");
+		}
+		array[index]=element;
+	}
+	
 	//打印	
 	public void print(){
 		System.out.println("打印顺序表：");

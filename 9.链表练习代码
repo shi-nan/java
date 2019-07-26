@@ -132,3 +132,82 @@ class solution{
 	 }
 	 return p1;
  }
+
+public class test {
+    public static void main(String []args){
+        Node n1=new Node.new Node(1);
+
+    }
+    class Node{
+        int val;
+        Node(int val) {
+            this.val = val;
+            this.next = null;
+        }
+Node removeALL(Node head,int val) {//遍历原链表，发现结点的值是val,就删除该结点
+    Node prev = null;//做删除
+    Node cur = head;//从头结点开始遍历
+    while (cur != null) {
+        if (cur.val == val) {
+            if (cur == head) {
+                head = cur.next;
+            } else {
+                prev.next = cur.next;
+            }
+    else{
+                prev = cur;
+            }
+            cur = cur.next;
+        }
+        return head;
+    }
+}
+//合并有序列表
+}
+//面试题第五题-链表分割
+public Node partition(Node head,int x) {
+    Node small = null;
+    Node smallLast = null;
+
+    Node big = null;
+    Node bigLast = null;
+
+    Node cur = head;
+    while (cur != null) {
+        if (small.val < x) {
+            if (small == null) {
+                small = cur;
+            } else {
+                smallLast.next = cur;
+            }
+            smallLast = cur;
+        }
+    }
+    cur = cur.next;
+
+    if (head == null) {
+        return small;
+    } else {
+        while (small.val < x) {
+            if (small.next != null) {
+                small = small.next;
+            }
+
+        }
+    }
+}
+//链表的中间结点
+//private int getLengrh
+//
+            private int getLength(Node head,int K=k){
+                int length=0;
+                 while( Node cur=head;cur!=null;cur=cur.next){
+                        length++;
+                 }
+
+                        }
+//替换法
+node.val=node.next.val;
+node.next=node.next.next;
+// 链表的回文结构
+

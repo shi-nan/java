@@ -170,6 +170,41 @@ public class MyArrayList{
 	 
 	public static void main(String []args){
 		MyArrayList list=new MyArrayList();
+class Stack{
+    private int []array;
+    private int top;
+    Stack(){
+        array=new int[10];
+        size=0;
+    }
+    void push(int val){
+        if(top<array.length){
+            array[top++]=val;
+        }
+        else {
+            int newCapacity=array.length*2;
+            int newArray[]=new int[newCapacity];
+            
+            for(int i=0;i<top;i++){
+                newArray[i]=array[i];
+                }
+            }
+        }
+       
+    }
+    void pop(){
+        if(size==0){
+            System.out.println("删除失败");
+        }
+        else{
+            array[--top]=0;
+        }  
+    }
+    
+    
+栈的应用：
+回溯（深度优先遍历）
+1）迷宫 
 	} 
 	
 	//保证容量够用，否则进行扩容

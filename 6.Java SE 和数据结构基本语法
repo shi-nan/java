@@ -425,3 +425,64 @@ java             运行环境（Run time)
 jdb               调试器（D
 
      
+栈和队列
+栈：一种特殊的线性表，其只允许在固定的一端进行插入和删除元素操作。
+只能一头插入/ 一头删除
+
+先进后出
+后进先出
+
+队列 在一头插入/另一头删除
+ 先进先出 First In First Out
+class stack{
+    //属性
+    //存数据的空间
+    int []array;
+    //当前栈内元素个数
+    int top;
+    //在栈内写做top，表示栈顶元素
+}
+
+
+class Stack{
+    private int []array;
+    private int top;
+    Stack(){
+        array=new int[10];
+        size=0;
+    }
+    void push(int val){
+        if(top<array.length){
+            array[top++]=val;
+        }
+        else {
+            int newCapacity=array.length*2;
+            int newArray[]=new int[newCapacity];
+            
+            for(int i=0;i<top;i++){
+                newArray[i]=array[i];
+                }
+            }
+        }
+       
+    }
+    void pop(){
+        if(size==0){
+            System.out.println("删除失败");
+        }
+        else{
+            array[--top]=0;
+        }  
+    }
+    
+    
+
+栈的应用：
+回溯（深度优先遍历）
+1）迷宫 
+
+栈和队列 线性表M
+栈 FILO/LIPO
+迷宫、后缀表达式、括号匹配、方法的调用栈
+
+深度优先遍历
